@@ -34,7 +34,7 @@ composepage=$(curl -s -b "cookie.txt" -c "cookie.txt" -L -A "$uagent" "https://m
 
 #TWEET
 echo "[+] Posting a new tweet: $tweet..." && sleep $sleeptime
-tweettoken=`echo "$composepage" | grep "authenticity_token" | sed -e 's/.*value="//' | sed -e 's/" \/>.*//' | tail -n 1`
+tweettoken=$(echo "$composepage" | grep "authenticity_token" | sed -e 's/.*value="//' | sed -e 's/" \/>.*//' | tail -n 1)
 update=$(curl -s -b "cookie.txt" -c "cookie.txt" -L --sslv3 -A "$uagent" -d "authenticity_token=$tweettoken&tweet[text]=$tweet&tweet[display_coordinates]=false" "https://mobile.twitter.com/")
 
 #GRAB LOGOUT TOKENS
