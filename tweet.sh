@@ -41,7 +41,7 @@ update=$(curl -s -b "cookie.txt" -c "cookie.txt" -L --sslv3 -A "$uagent" -d "aut
 logoutpage=$(curl -s -b "cookie.txt" -c "cookie.txt" -L --sslv3 -A "$uagent" "https://mobile.twitter.com/account")
 
 #LOGOUT
-echo "[+] Logging out..."
+echo "[+] Logging out..." && sleep $sleeptime
 logouttoken=$(echo "$logoutpage" | grep "authenticity_token" | sed -e 's/.*value="//' | sed -e 's/" \/>.*//' | tail -n 1)
 logout=$(curl -s -b "cookie.txt" -c "cookie.txt" -L --sslv3 -A "$uagent" -d "authenticity_token=$logouttoken" "https://mobile.twitter.com/session/destroy")
 
