@@ -1,7 +1,6 @@
 # CLI Twitter status update bot
 
-* Readme edit date: Dec 15 2011
-* Contributors: lukapusic
+* Author: [lukapusic](https://github.com/lukapusic) <luka@pusic.si>
 * URI: http://360percents.com/posts/command-line-twitter-status-update-for-linux-and-mac/
 * Github: https://github.com/lukapusic/twitter-bot
 
