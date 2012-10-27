@@ -22,10 +22,11 @@ Supports multiple pages.
 #### 15.12.2011
 * The script now throws an error if there is no tweet text provided.
 
+### 27.10.2012
+* The script is fixed now, fully supports SSL and logouts properly.
+
 ## Known issues
 *
 
 ## License
- ----------------------------------------------------------------------------
- "THE BEER-WARE LICENSE" (Revision 42): <pusic93@gmail.com> wrote this file. As long as you retain    this notice you can do whatever you want with this stuff. If we meet some day, and you think this  stuff is worth it, you can buy me a beer in return. Luka Pusic
- ----------------------------------------------------------------------------
+[CC-BY-NC](https://creativecommons.org/licenses/by-nc/2.0/), [Luka Pusic](http://pusic.si)
