@@ -5,8 +5,7 @@
 * Github: https://github.com/lukapusic/twitter-bot
 
 ## Description
-Shell script to download music from http://www.soundcloud.com.
-Supports multiple pages.
+This script can log into your Twitter account and post a new tweet, all without the official API.
 
 ## System requirements
 * Unix like OS (Linux, Mac OS X...)
