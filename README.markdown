@@ -25,6 +25,7 @@ This script can log into your Twitter account and post a new tweet, all without 
 
 ## Known issues
 * Will not throw any errors if it's unsuccessful, e.g. when it hits a CAPTCHA at login, or if the text has been tweeted before.
+* Ignores that URLs are shortened to 20 or 21 chars by twitter.
 
 ## License
 [CC-BY-NC](https://creativecommons.org/licenses/by-nc/2.0/), dawtmaytrikx
