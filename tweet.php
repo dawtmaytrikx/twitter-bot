@@ -12,9 +12,15 @@ $password = urlencode("password");
 $uagent = "Mozilla/5.0"; #user agent (fake a browser)
 $sleeptime = 0; #add pause between requests
 
-if (isset($argv[1])) $tweet = urlencode($argv[1]); #must be less than 140 chars
-elseif (strlen($tweet) > 140) { echo "[FAIL] Tweet must not be longer than 140 chars!\r\n"; exit(1); }
-else { echo "[FAIL] Nothing to tweet. Enter your text as argument.\r\n"; exit(1); }
+if (isset($argv[1])) {
+    $tweet = urlencode($argv[1]); #must be less than 140 chars
+} elseif (strlen($argv[1]) > 140) {
+    echo "[FAIL] Tweet must not be longer than 140 chars!\r\n";
+    exit(1);
+} else {
+    echo "[FAIL] Nothing to tweet. Enter your text as argument.\r\n";
+    exit(1);
+}
 
 $host = fopen("cookie.txt", "w"); #create a temp. cookie file
 $ch = curl_init();
