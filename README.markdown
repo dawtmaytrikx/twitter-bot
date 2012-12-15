@@ -18,10 +18,10 @@ This script can log into your Twitter account and post a new tweet, all without 
 ## Instructions
 ### Under UNIXoid system:
 1. apply executable permissions ```chmod +x ./tweet.php```
-2. usage: ```./tweet.php 'Status'```
+2. usage: ```./tweet.php 'Status'``` or ```php tweet.php 'Status'```
 
 ### Under Windows:
-1. ```php.exe tweet.php 'Status'``` (NOT tested)!
+1. usage ```php.exe tweet.php 'Status'``` (NOT tested!)
 
 ## Known issues
 * Will not throw any errors if it's unsuccessful, e.g. when it hits a CAPTCHA at login, or if the text has been tweeted before.
