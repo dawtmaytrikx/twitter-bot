@@ -11,22 +11,24 @@ $password = urlencode("password");
 #EXTRA OPTIONS
 $uagent = "Mozilla/5.0"; #user agent (fake a browser)
 $sleeptime = 0; #add pause between requests
+$file = $_SERVER['DOCUMENT_ROOT']."/cookie.txt"; #needs to be writable
 
 if (isset($argv[1])) {
     $tweet = urlencode($argv[1]); #must be less than 140 chars
-} elseif (strlen($argv[1]) > 140) {
-    echo "[FAIL] Tweet must not be longer than 140 chars!\r\n";
-    exit(1);
+    if (strlen($tweet) > 140) {
+        echo "[FAIL] Tweet must not be longer than 140 chars!\r\n";
+        exit(1);
+    }
 } else {
     echo "[FAIL] Nothing to tweet. Enter your text as argument.\r\n";
     exit(1);
 }
 
-$host = fopen("cookie.txt", "w"); #create a temp. cookie file
+$host = fopen($file, "w"); #create a temp. cookie file
 $ch = curl_init();
 curl_setopt_array($ch, array(//CURLOPT_MUTE => TRUE, //-s
-                             CURLOPT_COOKIE => "cookie.txt", //-b
-                             CURLOPT_COOKIEJAR => "cookie.txt", //-c
+                             CURLOPT_COOKIE => $file, //-b
+                             CURLOPT_COOKIEJAR => $file, //-c
                              CURLOPT_FOLLOWLOCATION => TRUE, //-L
                              CURLOPT_SSLVERSION => 3, //--sslv3
                              CURLOPT_USERAGENT => $uagent, //-A
@@ -102,7 +104,7 @@ $logout = curl_exec($ch);
 
 
 fclose($host);
-unlink("cookie.txt");
+unlink($file);
 curl_close($ch);
 exit(0);
 ?>
