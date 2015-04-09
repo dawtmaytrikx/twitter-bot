@@ -1,3 +1,6 @@
+##Please note this does no longer work as of April 2015. Twitter changed some stuff and I'm in no mood of fixing it as of now. Sorry!
+
+
 # CLI Twitter status update bot
 ## Original bash version
 * Author: [lukapusic](https://github.com/lukapusic) <luka@pusic.si>
